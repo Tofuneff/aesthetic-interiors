@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xếp loại học lực sinh viên</title>
+    <style>
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 300px;
+        }
+
+        button {
+            border: none;
+            padding: 10px 15px;
+            font-size: 18px;
+            background-color: rgb(21, 21, 21);
+            color: white;
+            border-radius: 20px;
+        }
+
+        button:hover {
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            border: 1px solid #000;
+        }
+
+        button:active {
+            background-color: rgb(204, 204, 204);
+        }
+
+        #result,
+        #result1,
+        #result2 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // Tạo đối tượng sinh viên
+        let sv = new Object();
+
+        // Nhập họ tên và điểm
+        sv.hoTen = prompt("Họ và tên");
+        sv.diem = Number(prompt("Điểm"));
+
+        // Khai báo cho phương thức hienThi()
+        sv.hienThi = function () {
+            // Xếp loại và lưu học lực vào thuộc tính hocLuc
+            if (this.diem >= 5) {
+                this.hocLuc = "Đậu";
+            } else {
+                this.hocLuc = "Rớt";
+            }
+
+            // Hiển thị thông tin sinh viên ra màn hình
+            document.write("<h3>Họ và tên: " + this.hoTen + "</h3>");
+            document.write("<h3>Điểm TB: " + this.diem + "</h3>");
+            document.write("<h3>Học lực: " + this.hocLuc + "</h3>");
+
+            // document.getElementById('result').innerHTML = "Họ và tên: " + this.hoTen;
+
+            // document.getElementById('result1').innerHTML = "Điểm TB: " + this.diem;
+
+            // document.getElementById('result2').innerHTML = "Học lực: " + this.hocLuc;
+        };
+    </script>
+
+    <!-- Gọi phương thức hiển thị để thực hiện hiển thị thông tin -->
+    <div class="button">
+        <button onclick="sv.hienThi();">Hiển thị</button>
+    </div>
+
+    <h3 id="result"></h3>
+    <h3 id="result1"></h3>
+    <h3 id="result2"></h3>
+</body>
+
+</html>

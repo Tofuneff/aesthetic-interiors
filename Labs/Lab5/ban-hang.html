@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bán hàng</title>
+    <style>
+        .app {
+            display: flex;
+            justify-content: space-evenly;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <div class="list-product">
+            <h3 class="title">DANH MỤC HÀNG HOÁ</h3>
+            <table border="1">
+                <tr>
+                    <td>iPhone 9</td>
+                    <td>$2700</td>
+                    <td><button onclick="add(this)">Thêm</button></td>
+                </tr>
+                <tr>
+                    <td>Samsung Star</td>
+                    <td>$1500</td>
+                    <td><button onclick="add(this)">Thêm</button></td>
+                </tr>
+                <tr>
+                    <td>Nokia 2020</td>
+                    <td>$1200</td>
+                    <td><button onclick="add(this)">Thêm</button></td>
+                </tr>
+                <tr>
+                    <td>Sony Xperia</td>
+                    <td>$1700</td>
+                    <td><button onclick="add(this)">Thêm</button></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="cart">
+            <h3 class="title">GIỎ HÀNG CỦA BẠN</h3>
+            <table border="1" id="cart"></table>
+            <h3 class="total-amount">
+                TỔNG SỐ TIỀN: $
+                <span id="total"></span>
+            </h3>
+        </div>
+    </div>
+
+    <script>
+        function add(button) {
+            let row = button.parentElement.parentElement.cloneNode(true);
+            let btnDelete = row.getElementsByTagName("button")[0];
+            btnDelete.innerText = "Xoá";
+            btnDelete.setAttribute('onclick', 'deleteProduct(this)');
+            document.getElementById("cart").appendChild(row);
+            total();
+        }
+
+        function deleteProduct(button) {
+            let row = button.parentElement.parentElement;
+            document.getElementById("cart").removeChild(row);
+            total();
+        }
+
+        function total() {
+            let cart = document.getElementById("cart"); 
+            let rows = cart.getElementsByTagName("tr");
+
+            let total = 0;
+            if (rows.length > 0) {
+                for (let i = 0; i < rows.length; i++) { 
+                    let cells = rows[i].getElementsByTagName("td");
+                    let price = cells[1].innerText.substr(1);
+                    total += Number(price);
+                }
+            }
+            document.getElementById("total").innerText = total;
+        }
+    </script>
+</body>
+</html>

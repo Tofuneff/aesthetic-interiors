@@ -1,0 +1,177 @@
+.logo {
+    width: 70px;
+    height: 70px;
+}
+
+.contact ul {
+    display: flex;
+    position: relative;
+}
+
+.contact li {
+    padding: 0 20px;
+    list-style: none;
+}
+@media (max-width: 419px) {
+    .contact ul::before {
+        display: block;
+        position: absolute;
+    }
+}
+.user,
+.search,
+.like,
+.shopping_cart {
+    width: 20px;
+}
+
+.wrapper .navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+}
+
+.wrapper .navbar-toggler:focus, 
+.btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.wrapper .nav-link {
+    color: #666777;
+    font-weight: bold;
+    position: relative;
+}
+
+.wrapper .nav-link:hover, .nav-link.active {
+    color: #000;
+}
+
+@media (min-width: 991px) {
+    .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: #000;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::before, .nav-link.active::before {
+        width: 100%;
+        visibility: visible;
+    }
+}
+
+.banner {
+    margin-top: 90px;
+    object-fit: contain;
+    width: 100%;
+}
+
+.wrapper .navbar {
+    background-color: #fff;
+}
+
+.card {
+    width: 19rem;
+}
+
+.products-price {
+    display: flex;
+}
+
+.card-price {
+    font-size: 20px;
+    color: red;
+}
+
+.card-text,
+.card-price-sale {
+    color: #666777;
+}
+
+.card-price1 {
+    font-size: 20px;
+}
+
+.card-body {
+    height: 135px;
+}
+
+.products {
+    margin-top: 50px;
+}
+
+.hr {
+    border: 1px solid #000000;
+}
+
+.info-product1,
+.info-product2,
+.info-product3,
+.info-product4 {
+    width: 635px;
+    border: 1px solid #a3a3a3;
+    border-radius: 5px;
+}
+
+.info-product3,
+.info-product4 {
+    margin-top: 25px;
+}
+
+.blog-news {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.blog-about {
+    display: flex;
+    justify-content: right;
+}
+
+.blog-about a {
+    text-decoration: none;
+    margin-top: 35px;
+}
+
+.text-news {
+    flex-basis: 49%;
+    line-height: 25px;
+
+}
+
+.blog1 {
+    width: 635px;
+}
+
+.about {
+    font-size: 18px;
+    color: #000;
+    font-weight: 400;
+    line-height: 27px;
+}
+
+.arrow {
+    width: 20px;
+}
+
+.blog-text {
+    text-align: justify;
+    margin-top: 30px;
+}
+
+.blog-title {
+    font-size: 18px;
+    margin-top: 50px
+}
+
+.blog-news .blog1 {
+    border: 1px solid #a3a3a3;
+    border-radius: 5px;
+}

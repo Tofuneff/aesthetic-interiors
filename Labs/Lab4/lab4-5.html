@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý cửa sổ</title>
+</head>
+<body>
+    <script>
+        let newWindow = null;
+
+        function openNewWindow() {
+            let width = (navigator.userAgent.indexOf("MSIE") != -1) ? 100 : 150;
+            let height = width;
+            newWindow = window.open("", "", "width=" + width + ",height=" + height + ",toolbar=yes,menubar=yes");
+        }
+
+        function closeNewWindow() {
+            if (newWindow) {
+                newWindow.close();
+                newWindow = null;
+            }
+        }
+
+        function checkNewWindow() {
+            if (newWindow && !newWindow.closed) {
+                alert("Cửa sổ mới vẫn đang mở.");
+            } else {
+                alert("Cửa sổ mới đã được đóng.");
+            }
+        }
+    </script>
+    <button onclick="openNewWindow();">Mở cửa sổ mới</button>
+    <button onclick="closeNewWindow();">Đóng cửa sổ mới</button>
+    <button onclick="checkNewWindow();">Kiểm tra cửa sổ mới đã đóng hay chưa</button>
+</body>
+</html>

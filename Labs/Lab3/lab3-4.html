@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="lab3-4.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="title">Rock Paper Scissors Game</h1>
+        <div class="btn_choices mt-4">
+            <button onclick="choose('Scissors')" type="button" class="choose">Scissors</button>
+            <button onclick="choose('Rock')" type="button" class="choose mx-2">Rock</button>
+            <button onclick="choose('Paper')" type="button" class="choose">Paper</button>
+        </div>
+
+        <h4 class="notification mt-5">Kết quả</h4>
+        <div id="result"></div>
+
+    </div>
+
+    <script src="lab3-4.js"></script>
+</body>
+</html>
